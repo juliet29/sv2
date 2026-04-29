@@ -25,6 +25,7 @@ build-backend = "uv_build"
 
 [tool.uv.sources]
 utils4plans = { path = "../utils4plans", editable = true }
+polyfix = { path = "../polyfix", editable = true }
 
 [dependency-groups]
 dev = [

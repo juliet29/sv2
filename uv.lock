@@ -1226,7 +1226,7 @@ wheels = [
 [[package]]
 name = "polyfix"
 version = "0.1.9"
-source = { registry = "https://pypi.org/simple" }
+source = { editable = "../polyfix" }
 dependencies = [
     { name = "bpython" },
     { name = "cyclopts" },
@@ -1250,9 +1250,30 @@ dependencies = [
     { name = "utils4plans" },
     { name = "whenever" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cb/be/1674f4bbe1e2449b9c7a2c798bc8082b8b613901f2241cfbcbfd9a64e421/polyfix-0.1.9.tar.gz", hash = "sha256:76570d9ad871687a27b6f4c63fe29f3de5833a5ff4df5c501ce6be7f6f2e0470", size = 32383, upload-time = "2026-02-20T00:08:09.677Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/50/ac/e6277d75e899a0a65f95d10824928f79dc95b38ab9435dc775fa01ccc0d5/polyfix-0.1.9-py3-none-any.whl", hash = "sha256:9e2d323ee54ef69c92cdf5a1fe5d2c4d6c92e25a7f9461bf7236dadb8ae5ee9d", size = 51290, upload-time = "2026-02-20T00:08:08.686Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "bpython", specifier = ">=0.25" },
+    { name = "cyclopts", specifier = ">=4.4.3" },
+    { name = "expression", specifier = ">=5.6.0" },
+    { name = "geom", specifier = ">=0.3.0" },
+    { name = "loguru", specifier = ">=0.7.3" },
+    { name = "matplotlib", specifier = ">=3.10.6" },
+    { name = "networkx", specifier = ">=3.5" },
+    { name = "numpy", specifier = ">=2.3.3" },
+    { name = "pipe", specifier = ">=2.2" },
+    { name = "pre-commit", specifier = ">=4.5.1" },
+    { name = "ptpython", specifier = ">=3.0.31" },
+    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pyprojroot", specifier = ">=0.3.0" },
+    { name = "pytest", specifier = ">=8.4.2" },
+    { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "shapely", specifier = ">=2.1.2" },
+    { name = "snakemake", specifier = ">=9.14.5" },
+    { name = "tomli-w", specifier = ">=1.2.0" },
+    { name = "types-networkx", specifier = ">=3.5.0.20251106" },
+    { name = "utils4plans" },
+    { name = "whenever", specifier = ">=0.9.3" },
 ]
 
 [[package]]
@@ -2014,7 +2035,7 @@ requires-dist = [
     { name = "cyclopts", specifier = ">=4.11.0" },
     { name = "matplotlib", specifier = ">=3.10.9" },
     { name = "mkdocstrings-python", specifier = ">=2.0.3" },
-    { name = "polyfix", specifier = ">=0.1.9" },
+    { name = "polyfix", editable = "../polyfix" },
     { name = "pyprojroot", specifier = ">=0.3.0" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "svg-path", specifier = ">=7.0" },
