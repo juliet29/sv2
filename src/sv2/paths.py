@@ -19,19 +19,24 @@ class SVGPaths:
     _2_ortho = base / "2_ortho.svg"
 
 
-class PolyfixWorkflowPaths:
+class WorkflowTest:
     base = StaticPaths.temp / "workflow_test"
     ortho = base / "ortho"
     rect = base / "rect"
 
 
+# @dataclass
+# class WorkflowPaths:
+
+
 @dataclass
 class SingleWorkflowPaths:
-    name: str
+    base: Path
+    # name: str
 
-    @property
-    def base(self):
-        return StaticPaths.temp / "workflow_test" / self.name
+    # @property
+    # def base(self):
+    #     return StaticPaths.temp / "workflow_test" / self.name
 
     @property
     def init(self):
@@ -68,4 +73,4 @@ class SingleWorkflowPaths:
 
 class ProjectPaths:
     svgs = SVGPaths
-    wflow = PolyfixWorkflowPaths
+    wflow = WorkflowTest
