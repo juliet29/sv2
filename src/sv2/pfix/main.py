@@ -1,8 +1,10 @@
-from sv2.paths import SingleWorkflowPaths
-from sv2.svgs.main import svg_to_layout_model
-from polyfix.cli.make.main import move, ortho, plan, rotate, simplify
 from pathlib import Path
+
+from polyfix.cli.make.main import move, ortho, plan, rotate, simplify
+
+from sv2.paths import SingleWorkflowPaths
 from sv2.pfix.config import CaseConfig
+from sv2.svgs.main import svg_to_layout_model
 
 
 def write_initial_model(svg_path: Path, output_path: Path):

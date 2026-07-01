@@ -12,12 +12,12 @@ dependencies = [
   "matplotlib>=3.10.9",
   "mkdocstrings-python>=2.0.3",
   "omegaconf>=2.3.0",
-  "polyfix>=0.1.9",
   "pyprojroot>=0.3.0",
   "pytest>=9.0.2",
   "svg-path>=7.0",
   "svgpathtools>=1.7.2",
   "utils4plans",
+  "polyfix",
 ]
 
 [build-system]
@@ -29,9 +29,7 @@ utils4plans = { path = "../utils4plans", editable = true }
 polyfix = { path = "../polyfix", editable = true }
 
 [dependency-groups]
-dev = [
-    "zensical>=0.0.37",
-]
+dev = ["zensical>=0.0.37"]
 
 [project.scripts]
 sv2 = "sv2.cli.make.main:main"
