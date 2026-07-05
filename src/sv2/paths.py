@@ -7,9 +7,9 @@ TEMP_PATH = "/scratch/users/jnwagwu/sv2"
 
 
 class StaticPaths:
-    inputs = Path(BASE_PATH) / "1_inputs"
-    temp = Path(TEMP_PATH) / "4_temp"
-    figures = Path(TEMP_PATH) / "5_figures"
+    inputs = Path(BASE_PATH) / "static/1_inputs"
+    temp = Path(TEMP_PATH) / "data"
+    figures = Path(TEMP_PATH) / "figs"
 
 
 class SVGPaths:

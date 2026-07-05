@@ -1,5 +1,5 @@
 from xml.dom import minidom
-from utils4plans.geom_io import LayoutModel
+from utils4plans.geom.io import LayoutModel
 from pathlib import Path
 
 from sv2.svgs.errors import NoPathsWithIdsException

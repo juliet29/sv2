@@ -4,7 +4,7 @@ from utils4plans.geom import Range, Domain
 from xml.dom.minidom import Element
 from sv2.svgs.helpers import create_from_path_alpha, create_from_path_numeric
 
-from utils4plans.geom_io import DomainModel
+from utils4plans.geom.io import DomainModel
 
 
 @dataclass

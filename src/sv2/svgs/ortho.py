@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from utils4plans.geom_io import DomainModel
+from utils4plans.geom.io import DomainModel
 from utils4plans.geom import Coord
 from polyfix.geometry.paired_coords import PairedCoord, coords_from_paired_coords_list
 from svg.path import parse_path, Line

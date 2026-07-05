@@ -1,8 +1,9 @@
 from pathlib import Path
+
 from polyfix.pydantic_models import AxGraphModel
 from utils4plans.io import read_json
 
-from sv2.paths import SingleWorkflowPaths
+from sv2.workflow_paths import SingleWorkflowPaths
 
 
 def get_edges(path: Path):
