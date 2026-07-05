@@ -1,8 +1,8 @@
-from sv2.svgs.rectangle import SVGRectangle
-from sv2.svgs.helpers import SVGNames as SN
-from sv2.svgs.ortho import SVGOrtho
-from sv2.svgs.main import parse_svg, svg_to_layout_model
 from sv2.paths import ProjectPaths
+from sv2.svgs.helpers import SVGNames as SN
+from sv2.svgs.main import parse_svg, svg_to_layout_model
+from sv2.svgs.ortho import SVGOrtho
+from sv2.svgs.rectangle import SVGRectangle
 
 
 class TestAnnotations:
@@ -16,9 +16,8 @@ class TestAnnotations:
 
 
 class TestReadSVG:
-
-    rect_paths = parse_svg(ProjectPaths.svgs._1_rect)
-    ortho_paths = parse_svg(ProjectPaths.svgs._2_ortho)
+    rect_paths = parse_svg(ProjectPaths.inputs.svgs._1_rect)
+    ortho_paths = parse_svg(ProjectPaths.inputs.svgs._2_ortho)
 
     def test_create_svgrect(self):
         filtered_paths = [p for p in self.rect_paths if p.tagName == SN.rect_element]
@@ -37,5 +36,5 @@ class TestReadSVG:
 
 
 def test_create_layout_model():
-    layout = svg_to_layout_model(ProjectPaths.svgs._2_ortho)
+    layout = svg_to_layout_model(ProjectPaths.inputs.svgs._2_ortho)
     assert len(layout.root.keys()) > 2

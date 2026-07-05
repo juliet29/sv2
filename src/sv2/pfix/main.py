@@ -2,8 +2,8 @@ from pathlib import Path
 
 from polyfix.cli.make.main import move, ortho, plan, rotate, simplify
 
-from sv2.paths import SingleWorkflowPaths
 from sv2.pfix.config import CaseConfig
+from sv2.pfix.workflow_paths import SingleWorkflowPaths
 from sv2.svgs.main import svg_to_layout_model
 
 
@@ -27,7 +27,7 @@ def execute_polyfix(output_path: Path):
 
 def transform_svg(config: CaseConfig):
     # svg_path should exist, create output path if it doesent exist..
-    assert config.svg_path.exists()
+    assert config.svg_path.exists(), f"Could not find {config.svg_path}"
     config.output_folder.mkdir(parents=True, exist_ok=True)
 
     write_initial_model(config.svg_path, config.output_folder)

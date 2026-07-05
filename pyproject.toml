@@ -33,4 +33,4 @@ dev = ["zensical>=0.0.37"]
 
 [project.scripts]
 sv2 = "sv2.cli.make.main:main"
-sv2-studies = "sv2.cli.studies:main"
+sv2s = "sv2.cli.studies:main"

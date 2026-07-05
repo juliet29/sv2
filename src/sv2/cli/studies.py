@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
-from sv2.paths import ProjectPaths
 from cyclopts import App
 from loguru import logger
 from utils4plans.logconfig import logset
 
+from sv2.paths import ProjectPaths
 from sv2.pfix.config import CaseConfig
 from sv2.pfix.main import transform_svg
 
@@ -21,10 +21,10 @@ def keep():
 @app.command()
 def fg():
     config = CaseConfig(
-        svg_path=ProjectPaths.svgs._2_ortho,
+        svg_path=ProjectPaths.inputs.svgs._2_ortho,
         pixel_length=200,
         meter_length=1,
-        output_folder=ProjectPaths.wflow.ortho,
+        output_folder=ProjectPaths.outputs.workflow.ortho,
     )
     transform_svg(config)
     # paths = parse_svg(ProjectPaths.svgs._2_ortho)
