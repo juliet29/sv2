@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from cyclopts import App
 from loguru import logger
-from utils4plans.logconfig import logset
+from utils4plans.logs import logset
 
 from sv2.paths import ProjectPaths
 from sv2.pfix.config import CaseConfig
