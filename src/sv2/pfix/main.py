@@ -1,29 +1,15 @@
 from pathlib import Path
 
-from polyfix.cli.make.main import move, ortho, plan, rotate, simplify
+from polyfix.main.execute import execute_polyfix
+from polyfix.main.workflow_paths import SingleWorkflowPaths
 
 from sv2.pfix.config import CaseConfig
 from sv2.svgs.main import svg_to_layout_model
-from sv2.workflow_paths import SingleWorkflowPaths
 
 
 def write_initial_model(svg_path: Path, output_path: Path):
     layout_model = svg_to_layout_model(svg_path)
     layout_model.write_to_path(SingleWorkflowPaths(output_path).init)
-
-
-def execute_polyfix(output_path: Path):
-    paths = SingleWorkflowPaths(output_path)
-
-    rotate(paths.init, paths.rotate)
-    ortho(paths.rotate, paths.ortho)
-    simplify(paths.ortho, paths.simplify)
-    plan("X", paths.rotate, paths.xplan)
-    breakpoint()
-    move("X", paths.xplan, paths.xmove)
-
-    plan("Y", paths.xmove, paths.yplan)
-    move("Y", paths.yplan, paths.ymove)
 
 
 def transform_svg(config: CaseConfig):

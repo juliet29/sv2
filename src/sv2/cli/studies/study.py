@@ -3,11 +3,13 @@ from cyclopts import App
 from loguru import logger
 from utils4plans.logs import logset
 
+from sv2.cli.studies.polyfix_help import pfx
 from sv2.paths import ProjectPaths
 from sv2.pfix.config import CaseConfig
 from sv2.pfix.main import transform_svg
 
 app = App()
+app.command(pfx)
 
 
 def keep():
