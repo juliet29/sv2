@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from utils4plans.geom import Range, Domain
-
 from xml.dom.minidom import Element
-from sv2.svgs.helpers import create_from_path_alpha, create_from_path_numeric
 
+from utils4plans.geom import Domain, Range
 from utils4plans.geom.io import DomainModel
+
+from sv2.svgs.helpers import create_from_path_alpha, create_from_path_numeric
 
 
 @dataclass
@@ -13,7 +13,7 @@ class SVGRectangle:
     height: float
     x: float
     y: float
-    id: str  # NOTE: technically, a name but ID is matches the specification
+    id: str  # NOTE: technically a name but ID is matches the specification
 
     @classmethod
     def read(cls, path: Element):
@@ -29,6 +29,9 @@ class SVGRectangle:
 
     def to_domain_model(self):
         horz_range = Range(self.x, self.x + self.width)
+        # y_flip, height_flip = self.y * -1, self.height * -1
+
+        self.y *= -1  # NOTE: SVG convention has (0,0) in the top left and y moving downward, change to accomadate typical mathematical coordinates
         vert_range = Range(self.y - self.height, self.y)
         domain = Domain(horz_range, vert_range)
         return DomainModel(name=self.id, coords=domain.to_coords())

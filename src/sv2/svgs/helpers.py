@@ -8,6 +8,12 @@ class SVGNames:
     any_element = "*"
 
 
+def apply_flip_transform(path: Element):
+    """SVG convention is to have (0,0) in top-left, and y moving down. Rotate all to match typical math coordinates"""
+    path.setAttribute("transform", "scale(1, -1)")
+    return path
+
+
 def get_attr(attr_name: str, path: Element):
     value = path.getAttribute(attr_name)
     return value

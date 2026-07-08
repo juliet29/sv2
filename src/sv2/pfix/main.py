@@ -19,6 +19,7 @@ def execute_polyfix(output_path: Path):
     ortho(paths.rotate, paths.ortho)
     simplify(paths.ortho, paths.simplify)
     plan("X", paths.rotate, paths.xplan)
+    breakpoint()
     move("X", paths.xplan, paths.xmove)
 
     plan("Y", paths.xmove, paths.yplan)

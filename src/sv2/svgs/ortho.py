@@ -1,9 +1,10 @@
 from dataclasses import dataclass
-from utils4plans.geom.io import DomainModel
-from utils4plans.geom import Coord
-from polyfix.geometry.paired_coords import PairedCoord, coords_from_paired_coords_list
-from svg.path import parse_path, Line
 from xml.dom.minidom import Element
+
+from polyfix.geometry.paired_coords import PairedCoord, coords_from_paired_coords_list
+from svg.path import Line, parse_path
+from utils4plans.geom import Coord
+from utils4plans.geom.io import DomainModel
 
 from sv2.svgs.helpers import get_attr
 
@@ -12,6 +13,7 @@ def line_to_coords(line: Line):
     def point_to_coord(val: complex):
         x = val.real
         y = val.imag
+        y *= -1  # NOTE: SVG coords have y starting at top-left
         return Coord(x, y)
 
     return PairedCoord(point_to_coord(line.start), point_to_coord(line.end))

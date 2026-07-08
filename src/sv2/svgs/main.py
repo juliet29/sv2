@@ -1,18 +1,21 @@
-from xml.dom import minidom
-from utils4plans.geom.io import LayoutModel
 from pathlib import Path
+from xml.dom import minidom
+
+from utils4plans.geom.io import LayoutModel
 
 from sv2.svgs.errors import NoPathsWithIdsException
+from sv2.svgs.helpers import SVGNames as SN
+from sv2.svgs.helpers import apply_flip_transform
 from sv2.svgs.ortho import SVGOrtho
 from sv2.svgs.rectangle import SVGRectangle
-
-from sv2.svgs.helpers import SVGNames as SN
 
 
 def parse_svg(svg_path: Path):
     doc = minidom.parse(str(svg_path))
     paths = [
-        p for p in doc.getElementsByTagName(SN.any_element) if p.getAttribute(SN.id)
+        apply_flip_transform(p)
+        for p in doc.getElementsByTagName(SN.any_element)
+        if p.getAttribute(SN.id)
     ]
     if not paths:
         raise NoPathsWithIdsException(svg_path)
