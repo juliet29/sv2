@@ -7,6 +7,7 @@ from sv2.svgs.errors import NoPathsWithIdsException
 from sv2.svgs.helpers import SVGNames as SN
 from sv2.svgs.helpers import apply_flip_transform
 from sv2.svgs.ortho import SVGOrtho
+from sv2.svgs.process import process_layout
 from sv2.svgs.rectangle import SVGRectangle
 
 
@@ -34,10 +35,7 @@ def make_ortho_domains(paths: list[minidom.Element]):
     return domains
 
 
-def svg_to_layout_model(svg_path: Path):
+def svg_to_layout_model(svg_path: Path, scaling_factor: float):
     paths = parse_svg(svg_path)
-    rect_domains = make_rect_domains(paths)
-    ortho_domains = make_ortho_domains(paths)
-
-    layout = LayoutModel.from_domains(rect_domains + ortho_domains)
-    return layout
+    domains = make_rect_domains(paths) + make_ortho_domains(paths)
+    return LayoutModel.from_domains(process_layout(domains, scaling_factor))

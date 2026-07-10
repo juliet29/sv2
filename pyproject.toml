@@ -16,7 +16,7 @@ dependencies = [
   "pytest>=9.0.2",
   "svg-path>=7.0",
   "svgpathtools>=1.7.2",
-  "utils4plans",
+  "utils4plans[yaml]",
   "polyfix",
 ]
 
