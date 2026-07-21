@@ -37,9 +37,7 @@ def fg():
 #     # return domains
 #
 #
-# @app.command()
-# def write_rect():
-#     layout_model = svg_to_layout_model(ProjectPaths.svgs._1_rect)
+# def write_rect(): layout_model = svg_to_layout_model(ProjectPaths.svgs._1_rect)
 #     layout_model.write_to_path(SingleWorkflowPaths("rect").init)
 #
 #

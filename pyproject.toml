@@ -10,7 +10,6 @@ requires-python = ">=3.13"
 dependencies = [
   "cyclopts>=4.11.0",
   "matplotlib>=3.10.9",
-  "mkdocstrings-python>=2.0.3",
   "omegaconf>=2.3.0",
   "pyprojroot>=0.3.0",
   "pytest>=9.0.2",
@@ -27,9 +26,6 @@ build-backend = "uv_build"
 [tool.uv.sources]
 utils4plans = { path = "../utils4plans", editable = true }
 polyfix = { path = "../polyfix", editable = true }
-
-[dependency-groups]
-dev = ["zensical>=0.0.37"]
 
 [project.scripts]
 sv2 = "sv2.cli.make.main:main"
