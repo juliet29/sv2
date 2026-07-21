@@ -1,6 +1,6 @@
 # svg2plan
 
-*Transform SVGs into geometrically valid floor plans.*
+_Transform SVGs into geometrically valid floor plans._
 
 `svg2plan` is a command-line tool that converts marked-up floor plans into
 geometrically valid representations that are rectangular, hole-free, and
@@ -27,8 +27,8 @@ configured correctly.
 Mark up your floor plan using rectangular shapes and room name labels, then
 export an `.svg` file. Tools such as Figma are well-suited for this step.
 
-SVG objects can be either rectangles or paths, but paths should be orthogonal.
-Each object should include `height`, `width`, `x`, `y`, and `id` attributes. Note
+SVG objects can be either rectangles or paths, but paths should be orthogonal. All objects should be non-overlapping.
+Each object should include `id` attributes. Note
 a pixel-length measurement corresponding to a known room dimension — this will be
 used to rescale the plan to real-world dimensions.
 
